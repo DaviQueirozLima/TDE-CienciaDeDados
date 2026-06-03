@@ -2,7 +2,10 @@ train.csv
 modelo_final/
 modelo_toxicidade/
 logs/
+
 __pycache__/
+*.pyc
+
 *.bin
 *.safetensors
 *.pt

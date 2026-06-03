@@ -1,4 +1,8 @@
+import os
 import matplotlib.pyplot as plt
+
+# Criar pasta de gráficos automaticamente
+os.makedirs("graficos", exist_ok=True)
 
 # Gráfico 1: Distribuição original das classes
 classes_originais = ["Não tóxico", "Tóxico"]
@@ -9,7 +13,7 @@ plt.bar(classes_originais, quantidades_originais)
 plt.title("Distribuição Original das Classes")
 plt.xlabel("Classe")
 plt.ylabel("Quantidade de Comentários")
-plt.savefig("grafico_distribuicao_original.png", dpi=300, bbox_inches="tight")
+plt.savefig("graficos/grafico_distribuicao_original.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 # Gráfico 2: Dataset balanceado
@@ -21,7 +25,7 @@ plt.bar(classes_balanceadas, quantidades_balanceadas)
 plt.title("Distribuição Após Balanceamento")
 plt.xlabel("Classe")
 plt.ylabel("Quantidade de Comentários")
-plt.savefig("grafico_distribuicao_balanceada.png", dpi=300, bbox_inches="tight")
+plt.savefig("graficos/grafico_distribuicao_balanceada.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 # Gráfico 3: Loss durante o treinamento
@@ -33,7 +37,8 @@ plt.plot(etapas, loss, marker="o")
 plt.title("Evolução da Loss Durante o Treinamento")
 plt.xlabel("Etapas de Treinamento")
 plt.ylabel("Loss")
-plt.savefig("grafico_loss_treinamento.png", dpi=300, bbox_inches="tight")
+plt.savefig("graficos/grafico_loss_treinamento.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 print("Gráficos gerados com sucesso!")
+print("Arquivos salvos na pasta: graficos/")
